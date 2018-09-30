@@ -1,0 +1,8 @@
+1. Adequar a documentação dos requisitos ao que está definido como escopo no documento visão.
+2. Eliminar do documento visão exemplos do template, que não fazem parte do sistema do grupo.
+3. Na Seção 6 do documento visão cita como referências os seguintes documentos: "Documento de Requisitos" e "Casos de uso". Não existe nenhum documento com estes nomes no repositório deste trabalho.
+4. No Título do documento visão deve se colocar o nome do sistema. "Documento Visão - <Nome do Sistema>.
+5. A classe usuário esta nominada com acento, alterar.
+
+
+
