@@ -47,10 +47,8 @@ function updateEvento(data) {
     $('input[name="ano"]').val(data.ano);
     $('input[name="mes"]').val(data.mes);
     $('input[name="dia"]').val(data.dia);
+
     $('#status').val(data.status);
-    
-    var instance = M.FormSelect.getInstance($('#status')[0]);
-    instance.destroy();
     $('#status').material_select();
 
     $('#modal1').modal('open');
@@ -58,6 +56,7 @@ function updateEvento(data) {
 
 function cancel() {
     $('form').trigger("reset");
+    $('#status').material_select();
 }
 
 $(document).ready(function () {

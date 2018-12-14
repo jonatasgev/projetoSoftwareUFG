@@ -1,12 +1,7 @@
 var Calendario = {};
 
 Calendario.diaDaSemana = function (dia, mes, ano) {
-    return new Date(ano, dia, mes).getDay();
-}
-
-Calendario.nomeDoDiaDaSemana = function (dia, mes, ano) {
-    var semana = ["Domingo", "Segunda-Feira", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira", "Sábado"];
-    return semana[Calendario.diaDaSemana(dia, mes, ano)];
+    return new Date(ano, --mes, dia).getDay();
 }
 
 Calendario.quantidadeDeDiasNoMes = function (mes, ano) {
@@ -36,7 +31,9 @@ Calendario.mes = function (mes, ano) {
 
     for (var i = 1; i <= quantidade; i++) {
         if (semana.length == 7) {
-            result.push({semana: semana});
+            result.push({
+                semana: semana
+            });
             semana = [];
         }
 
@@ -48,9 +45,11 @@ Calendario.mes = function (mes, ano) {
     }
 
     if (endSemana != 6) {
-        for (var i = 1; i < 7 - quantidade; i++) {
+        for (var i = 1; i < 7 - endSemana; i++) {
             if (semana.length == 7) {
-                result.push({semana: semana});
+                result.push({
+                    semana: semana
+                });
                 semana = [];
             }
 
@@ -59,6 +58,12 @@ Calendario.mes = function (mes, ano) {
                 mes: mes,
                 tarefas: []
             });
+        }
+        if (semana.length == 7) {
+            result.push({
+                semana: semana
+            });
+            semana = [];
         }
     }
 

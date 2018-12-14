@@ -29,7 +29,6 @@ TarefaController.read = function (req, res) {
         var calendario = Calendario.mes(mes, anoAtual);
 
         tarefas.forEach(function (t) {
-            console.log(t);
             calendario.forEach(function (s) {
                 s.semana.forEach(function (d) {
                     if (d.mes == mes && d.dia == t.dia) {
@@ -46,12 +45,7 @@ TarefaController.read = function (req, res) {
             calendario: calendario,
             tarefas: tarefas
         });
-    })
-    // }).sort({
-    //     ano: -1,
-    //     mes: -1,
-    //     dia: -1
-    // });
+    });
 }
 
 TarefaController.update = function (req, res) {
