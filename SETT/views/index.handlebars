@@ -1,0 +1,100 @@
+<div class="">
+    <div class="row">
+        <div class="col s12">
+            <div class="card">
+                <div class="card-content">
+                    <div class="input-field col s12">
+                        <form id="formSelectMes" action="/" method="GET">
+                            <select id="selectMes" name="mes" class="select" onchange="formSelectMes.submit()">
+                                <option value="1">Janeiro</option>
+                                <option value="2">Fevereiro</option>
+                                <option value="3">Março</option>
+                                <option value="4">Abril</option>
+                                <option value="5">Maio</option>
+                                <option value="6">Junho</option>
+                                <option value="7">Julho</option>
+                                <option value="8">Agosto</option>
+                                <option value="9">Setembro</option>
+                                <option value="10">Outubro</option>
+                                <option value="11">Novembro</option>
+                                <option value="12">Dezembro</option>
+                            </select>
+                        </form>
+                    </div>
+                    <a class="btn-floating btn-large waves-effect waves-light btn modal-trigger right" href="#modal1">
+                        <i class="material-icons">add</i>
+                    </a>
+                </div>
+
+                <div class="card-content">
+                    <form id="form" action="/" method="post" onsubmit="submitForm()">
+                        <div id="modal1" class="modal modal-fixed-footer">
+                            <div class="modal-content">
+                                <h4>Tarefa</h4>
+                                <br>
+                                <input type="hidden" name="id" placeholder="Id" required>
+                                <input type="text" name="titulo" placeholder="Titulo" required>
+                                <input type="text" name="tipo" placeholder="Tipo" required>
+                                <textarea type="text" name="descricao" placeholder="Descricao" class="materialize-textarea"></textarea>
+                                <input type="text" name="previsao" placeholder="Previsao" class="timepicker" required>
+                                <input type="text" name="ano" placeholder="Ano" required>
+                                <input type="text" name="mes" placeholder="Mes" required>
+                                <input type="text" name="dia" placeholder="Dia" required>
+
+                                <select id="status" name="status">
+                                    <option value="nova">Nova tarefa</option>
+                                    <option value="aguardando">Aguardando</option>
+                                    <option value="em andamento">Em andamento</option>
+                                    <option value="terminada">Terminada</option>
+                                    <option value="cancelada">Cancelada</option>
+                                </select>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn waves-effect red white-text left" onclick="deleteEvento()">excluir</button>
+                                <button type="button" onclick="cancel()" class="modal-close waves-effect btn-flat">cancelar</button>
+                                <button class="btn waves-effect">salvar</button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Domingo</th>
+                                <th>Segunda</th>
+                                <th>Terça</th>
+                                <th>Quarta</th>
+                                <th>Quinta</th>
+                                <th>Sexta</th>
+                                <th>Sábado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each calendario}}
+                            <tr>
+                                {{#each semana}}
+                                <td>
+                                    <b>{{dia}}</b>
+
+                                    {{#each tarefas}}
+                                        <div class="card">
+                                            <div class="card-content">
+                                                <a class="cursor-pointer" onclick="updateEvento({titulo:'{{titulo}}',tipo:'{{tipo}}',descricao:'{{descricao}}',previsao:'{{previsao}}',ano:'{{ano}}',mes:'{{mes}}',dia:'{{dia}}',status:'{{status}}',id:'{{_id}}'})">
+                                                    {{titulo}}
+                                                </a>
+                                                <b>{{previsao}}</b>
+                                            </div>
+                                        </div>
+                                    {{/each}}
+                                </td>
+                                {{/each}}
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

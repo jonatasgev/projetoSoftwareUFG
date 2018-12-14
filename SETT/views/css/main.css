@@ -1,0 +1,85 @@
+.brand-logo {
+    padding: 0 15px !important;
+}
+
+nav li {
+    padding: 0 10px !important;
+}
+
+.container {
+    max-width: 1600px;
+    width: 98%;
+}
+
+.select {
+    margin: auto;
+    width: 205px;
+}
+
+.select input {
+    border: none !important;
+    font-size: 40px !important;
+}
+
+.btn-floating {
+    margin-left: -60px;
+    position: absolute;
+}
+
+thead tr {
+    border-top: 1px solid #ddd;
+}
+
+thead tr th {
+    text-align: center;
+    width: calc(100% / 7);
+}
+
+th+th,
+td+td {
+    border-left: 1px solid #ddd;
+}
+
+td {
+    vertical-align: top;
+}
+
+.outro-mes {
+    background-color: #f7f7f7;
+    color: #777;
+}
+
+td .card a {
+    color: black;
+    cursor: pointer;
+    display: block;
+    font-size: 14px;
+}
+
+td .card b {
+    display: block;
+    font-size: 10px;
+    padding-top: 15px;
+    text-align: right;
+    width: 100%;
+}
+
+td .card-content {
+    padding: 10px !important;
+}
+
+.nota {
+    background: #ebf0a3;
+    padding: 1px 15px;
+    border-radius: 5px;
+}
+
+.nota a {
+    color: black;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
